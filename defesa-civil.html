@@ -11,14 +11,13 @@
       <div class="logo">Chronos <span>Weather Core</span></div>
       <nav class="nav-menu">
         <a href="index.html">Home</a>
-        <a href="pagina2.html">Monitoramento em Tempo Real</a>
-        <a href="pagina3.html" class="active">Painel da Defesa Civil</a>
+        <a href="defesa-civil.html" class="active">Simulador</a>
+        <a href="central-alertas.html">Central de Alertas</a>
       </nav>
     </header>
 
     <main class="container">
       <section class="simulador-layout">
-        <!-- Formulário de Acionamento de Emergência -->
         <div class="col-controles">
           <h2>Central de Acionamento de Protocolos</h2>
           <p>
@@ -32,14 +31,7 @@
               <label for="select-regiao">Selecione a Região sob Ameaça:</label>
               <select
                 id="select-regiao"
-                style="
-                  width: 100%;
-                  padding: 10px;
-                  background: #21262d;
-                  color: #c9d1d9;
-                  border: 1px solid #30363d;
-                  border-radius: 4px;
-                "
+                class="form-control"
               >
                 <option value="">-- Escolha uma área crítica --</option>
                 <option value="Zona Sul - Encostas e Morros">
@@ -60,14 +52,7 @@
               >
               <select
                 id="select-protocolo"
-                style="
-                  width: 100%;
-                  padding: 10px;
-                  background: #21262d;
-                  color: #c9d1d9;
-                  border: 1px solid #30363d;
-                  border-radius: 4px;
-                "
+                class="form-control"
               >
                 <option value="Nível Amarelo: Alerta de Atenção (SMS)">
                   Nível Amarelo: Alerta de Atenção (SMS)
@@ -84,24 +69,13 @@
             <button
               type="button"
               id="btn-disparar"
-              style="
-                width: 100%;
-                padding: 15px;
-                background: #f85149;
-                color: white;
-                border: none;
-                border-radius: 6px;
-                font-weight: bold;
-                cursor: pointer;
-                text-transform: uppercase;
-              "
+              class="btn-alerta"
             >
               Disparar Alerta à População
             </button>
           </form>
         </div>
 
-        <!-- Painel de Monitoramento de Resposta da Comunidade -->
         <div class="col-output">
           <h2>Status do Protocolo Local</h2>
           <div id="painel-status" class="status-box status-seguro">
@@ -111,19 +85,8 @@
 
           <div
             id="log-envio"
-            style="
-              margin-top: 20px;
-              font-family: monospace;
-              font-size: 13px;
-              color: #8b949e;
-              background: #0d1117;
-              padding: 15px;
-              border-radius: 6px;
-              border: 1px solid #30363d;
-              display: none;
-            "
+            class="log-container"
           >
-            <!-- O JavaScript vai injetar o histórico de disparos aqui -->
           </div>
         </div>
       </section>
