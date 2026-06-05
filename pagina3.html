@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chronos Weather Core - Central de Alertas</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">Chronos <span>Weather Core</span></div>
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="pagina2.html">Simulador</a>
+        <a href="pagina3.html" class="active">Central de Alertas</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="alertas-grid">
+        <div class="mapa-container">
+          <h2>Live Tracking: Estação Espacial e Telemetria Orbital</h2>
+          <p>
+            Monitoramento ativo da infraestrutura de satélites e dados em tempo
+            real da ISS[cite: 12, 15].
+          </p>
+
+          <div
+            id="mapa-radar"
+            style="height: 400px; width: 100%; border-radius: 6px"
+          ></div>
+
+          <div class="coordenadas-display">
+            <p>Latitude Atual: <span id="display-lat">Buscando...</span></p>
+            <p>Longitude Atual: <span id="display-lng">Buscando...</span></p>
+            <p>Velocidade Orbital: <span id="display-vel">Buscando...</span></p>
+          </div>
+        </div>
+
+        <div class="painel-alertas-lista">
+          <h2>Últimas Notificações Emitidas</h2>
+          <div class="alert-item critico">
+            <strong>[CRÍTICO] Oceano Índico</strong>
+            <p>
+              IA detectou formação abrupta de ciclone de categoria 4. Protocolo
+              de evacuação enviado para as defesas civis locais[cite: 11].
+            </p>
+          </div>
+          <div class="alert-item moderado">
+            <strong>[MODERADO] América do Sul</strong>
+            <p>
+              Anomalia de pressão atmosférica detectada sobre a cordilheira.
+              Monitoramento intensificado nas próximas 12 horas.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <p>
+        &copy; 2026 Chronos Weather Core. Desenvolvido para a Global Solution
+        FIAP[cite: 2, 30].
+      </p>
+    </footer>
+
+    <script src="script-alertas.js"></script>
+  </body>
+</html>

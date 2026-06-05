@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chronos Weather Core - Defesa Civil</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">Chronos <span>Weather Core</span></div>
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="pagina2.html">Monitoramento em Tempo Real</a>
+        <a href="pagina3.html" class="active">Painel da Defesa Civil</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="simulador-layout">
+        <!-- Formulário de Acionamento de Emergência -->
+        <div class="col-controles">
+          <h2>Central de Acionamento de Protocolos</h2>
+          <p>
+            Painel restrito para líderes comunitários e agentes da Defesa Civil
+            emitirem ordens de evacuação e alertas populacionais baseados nos
+            dados da IA.
+          </p>
+
+          <form id="form-emergencia" onsubmit="return false;">
+            <div class="control-group">
+              <label for="select-regiao">Selecione a Região sob Ameaça:</label>
+              <select
+                id="select-regiao"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  background: #21262d;
+                  color: #c9d1d9;
+                  border: 1px solid #30363d;
+                  border-radius: 4px;
+                "
+              >
+                <option value="">-- Escolha uma área crítica --</option>
+                <option value="Zona Sul - Encostas e Morros">
+                  Zona Sul - Encostas e Morros
+                </option>
+                <option value="Distrito Industrial - Área Costeira">
+                  Distrito Industrial - Área Costeira
+                </option>
+                <option value="Vale Central - Risco de Inundação">
+                  Vale Central - Risco de Inundação
+                </option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="select-protocolo"
+                >Protocolo de Resposta Recomendado pela IA:</label
+              >
+              <select
+                id="select-protocolo"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  background: #21262d;
+                  color: #c9d1d9;
+                  border: 1px solid #30363d;
+                  border-radius: 4px;
+                "
+              >
+                <option value="Nível Amarelo: Alerta de Atenção (SMS)">
+                  Nível Amarelo: Alerta de Atenção (SMS)
+                </option>
+                <option value="Nível Laranja: Preparação e Isolamento">
+                  Nível Laranja: Preparação e Isolamento
+                </option>
+                <option value="Nível Vermelho: Evacuação Imediata e Sirenes">
+                  Nível Vermelho: Evacuação Imediata e Sirenes
+                </option>
+              </select>
+            </div>
+
+            <button
+              type="button"
+              id="btn-disparar"
+              style="
+                width: 100%;
+                padding: 15px;
+                background: #f85149;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                font-weight: bold;
+                cursor: pointer;
+                text-transform: uppercase;
+              "
+            >
+              Disparar Alerta à População
+            </button>
+          </form>
+        </div>
+
+        <!-- Painel de Monitoramento de Resposta da Comunidade -->
+        <div class="col-output">
+          <h2>Status do Protocolo Local</h2>
+          <div id="painel-status" class="status-box status-seguro">
+            <p id="texto-status">NENHUM PROTOCOLO ATIVO NA REGIÃO</p>
+            <span id="risco-porcentagem">População em Segurança</span>
+          </div>
+
+          <div
+            id="log-envio"
+            style="
+              margin-top: 20px;
+              font-family: monospace;
+              font-size: 13px;
+              color: #8b949e;
+              background: #0d1117;
+              padding: 15px;
+              border-radius: 6px;
+              border: 1px solid #30363d;
+              display: none;
+            "
+          >
+            <!-- O JavaScript vai injetar o histórico de disparos aqui -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <p>
+        &copy; 2026 Chronos Weather Core. Desenvolvido para a Global Solution
+        FIAP[cite: 2].
+      </p>
+    </footer>
+
+    <script src="script-simulador.js"></script>
+  </body>
+</html>
