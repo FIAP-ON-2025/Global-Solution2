@@ -17,6 +17,55 @@
     </header>
 
     <main class="container">
+      <section class="simulador-intro">
+        <div class="intro-texto">
+          <h2>Centro de Comando e Inferência Preditiva</h2>
+          <p>
+            Bem-vindo ao ambiente de simulação do
+            <strong>Chronos Weather Core</strong>. Este painel foi desenvolvido
+            para demonstrar a capacidade de resposta do our motor de
+            Inteligência Artificial cruzado à telemetria da nossa constelação de
+            satélites orbitais.
+          </p>
+          <p>
+            Ao alterar as variáveis atmosféricas nos controles abaixo, a IA
+            processa instantaneamente os fluxos de dados e gera diagnósticos
+            automatizados, direcionando protocolos específicos para órgãos
+            públicos, gestores de infraestrutura e cadeias de produção.
+          </p>
+        </div>
+
+        <div class="intro-instrucoes">
+          <h3>📑 Guia de Cenários para Teste</h3>
+          <div class="lista-cenarios">
+            <div class="cenario-item">
+              <span class="badge status-verde">Cenário 1</span>
+              <p>
+                <strong>Rotina Operacional:</strong> Chuva &lt; 40mm e Vento
+                &lt; 50km/h. Avalia a estabilidade urbana e tráfego logístico
+                normal.
+              </p>
+            </div>
+            <div class="cenario-item">
+              <span class="badge status-laranja">Cenário 2</span>
+              <p>
+                <strong>Estado de Contingência:</strong> Chuva &gt; 40mm ou
+                Vento &gt; 50km/h. Mobiliza equipes de campo e emite avisos
+                preventivos a Smart Cities.
+              </p>
+            </div>
+            <div class="cenario-item">
+              <span class="badge status-vermelho">Cenário 3</span>
+              <p>
+                <strong>Protocolo Crítico:</strong> Chuva &gt; 80mm ou Vento
+                &gt; 90km/h. Dispara ordens de evacuação para Defesa Civil e
+                proteção de ativos em escala.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="simulador-layout">
         <div class="col-controles">
           <h2>Central de Acionamento de Protocolos</h2>
@@ -32,26 +81,47 @@
               <select id="select-regiao" class="form-control">
                 <option value="">-- Escolha uma área crítica --</option>
                 <option value="zona-sul">Zona Sul - Encostas e Morros</option>
-                <option value="area-costeira">Distrito Industrial - Área Costeira</option>
-                <option value="vale-central">Vale Central - Risco de Inundação</option>
+                <option value="area-costeira">
+                  Distrito Industrial - Área Costeira
+                </option>
+                <option value="vale-central">
+                  Vale Central - Risco de Inundação
+                </option>
               </select>
             </div>
 
-            
             <div class="control-group">
               <div class="label-container">
                 <label for="input-chuva">Volume de Chuva</label>
-                <span class="badge-clima"><span id="val-chuva">0</span> mm</span>
+                <span class="badge-clima"
+                  ><span id="val-chuva">0</span> mm</span
+                >
               </div>
-              <input type="range" id="input-chuva" min="0" max="150" value="0" class="slider-clima">
+              <input
+                type="range"
+                id="input-chuva"
+                min="0"
+                max="150"
+                value="0"
+                class="slider-clima"
+              />
             </div>
 
             <div class="control-group">
               <div class="label-container">
                 <label for="input-vento">Velocidade do Vento</label>
-                <span class="badge-clima"><span id="val-vento">0</span> km/h</span>
+                <span class="badge-clima"
+                  ><span id="val-vento">0</span> km/h</span
+                >
               </div>
-              <input type="range" id="input-vento" min="0" max="120" value="0" class="slider-clima">
+              <input
+                type="range"
+                id="input-vento"
+                min="0"
+                max="120"
+                value="0"
+                class="slider-clima"
+              />
             </div>
 
             <button type="button" id="btn-disparar" class="btn-alerta">
@@ -62,6 +132,54 @@
 
         <div class="col-output">
           <h2>Status do Protocolo Local</h2>
+
+          <div
+            class="coordenadas-display"
+            style="
+              background: #121824;
+              border: 1px solid #243147;
+              padding: 15px;
+              border-radius: 6px;
+              margin-bottom: 20px;
+              font-family: monospace;
+            "
+          >
+            <p
+              style="
+                margin: 0 0 10px 0;
+                color: #00d2ff;
+                font-weight: bold;
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              📡 Telemetria Orbital em Tempo Real
+            </p>
+            <div
+              style="display: flex; gap: 20px; color: #e2e8f0; font-size: 14px"
+            >
+              <div>
+                LAT:
+                <span id="sat-lat" style="color: #ffffff; font-weight: bold"
+                  >--.----</span
+                >
+              </div>
+              <div>
+                LONG:
+                <span id="sat-lng" style="color: #ffffff; font-weight: bold"
+                  >--.----</span
+                >
+              </div>
+              <div
+                style="margin-left: auto; color: #9d4edd; font-weight: bold"
+                id="sat-status"
+              >
+                [AGUARDANDO SINAL]
+              </div>
+            </div>
+          </div>
+
           <div id="painel-status" class="status-box status-seguro">
             <p id="texto-status">NENHUM PROTOCOLO ATIVO NA REGIÃO</p>
             <span id="risco-porcentagem">População em Segurança</span>
