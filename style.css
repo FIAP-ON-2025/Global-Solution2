@@ -443,6 +443,42 @@ body {
   font-weight: bold;
 }
 
+.telemetria-display {
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-family: monospace;
+}
+
+.telemetria-titulo {
+  margin: 0 0 10px 0;
+  color: var(--accent-blue);
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.telemetria-valores {
+  display: flex;
+  gap: 20px;
+  color: var(--text-base);
+  font-size: 14px;
+}
+
+.telemetria-valores span {
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+.telemetria-status {
+  margin-left: auto;
+  color: var(--accent-purple);
+  font-weight: bold;
+}
+
 .main-footer {
   background-color: var(--bg-dark);
   border-top: 1px solid var(--border-color);
@@ -563,6 +599,9 @@ body {
 }
 
 .badge {
+  display: inline-block;
+  min-width: 90px;
+  text-align: center;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 11px;
@@ -587,6 +626,12 @@ body {
   background: rgba(239, 68, 68, 0.15);
   color: var(--status-danger-text);
   border: 1px solid var(--status-danger);
+}
+
+.status-roxo {
+  background: rgba(157, 78, 221, 0.15);
+  color: #d8b4fe;
+  border: 1px solid var(--accent-purple);
 }
 
 @media (max-width: 992px) {

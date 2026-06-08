@@ -133,48 +133,20 @@
         <div class="col-output">
           <h2>Status do Protocolo Local</h2>
 
-          <div
-            class="coordenadas-display"
-            style="
-              background: #121824;
-              border: 1px solid #243147;
-              padding: 15px;
-              border-radius: 6px;
-              margin-bottom: 20px;
-              font-family: monospace;
-            "
-          >
-            <p
-              style="
-                margin: 0 0 10px 0;
-                color: #00d2ff;
-                font-weight: bold;
-                font-size: 12px;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-              "
-            >
+          <div class="telemetria-display">
+            <p class="telemetria-titulo">
               📡 Telemetria Orbital em Tempo Real
             </p>
-            <div
-              style="display: flex; gap: 20px; color: #e2e8f0; font-size: 14px"
-            >
+            <div class="telemetria-valores">
               <div>
                 LAT:
-                <span id="sat-lat" style="color: #ffffff; font-weight: bold"
-                  >--.----</span
-                >
+                <span id="sat-lat">--.----</span>
               </div>
               <div>
                 LONG:
-                <span id="sat-lng" style="color: #ffffff; font-weight: bold"
-                  >--.----</span
-                >
+                <span id="sat-lng">--.----</span>
               </div>
-              <div
-                style="margin-left: auto; color: #9d4edd; font-weight: bold"
-                id="sat-status"
-              >
+              <div id="sat-status" class="telemetria-status">
                 [AGUARDANDO SINAL]
               </div>
             </div>
