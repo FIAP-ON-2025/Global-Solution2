@@ -52,15 +52,15 @@ body {
 
 .conteudo-info h2 {
   color: var(--text-primary);
-  font-size: 24px;
-  margin-bottom: 18px;
+  font-size: 30px;
+  margin-bottom: 20px;
   font-weight: 700;
   letter-spacing: -0.5px;
   text-align: left;
 }
 
 .conteudo-info p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-base);
   margin-bottom: 0;
 }
@@ -222,6 +222,13 @@ body {
   margin-bottom: 20px;
 }
 
+.hero-banner p {
+  font-size: 18px;
+  color: var(--text-base);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .telemetria-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -274,14 +281,16 @@ body {
 
 .publico-card h3 {
   color: var(--accent-blue);
-  font-size: 18px;
+  font-size: 19px;
   margin-bottom: 12px;
+  text-align: left;
 }
 
 .publico-card p {
   color: var(--text-base);
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
 }
 
 .fluxo-tecnologico {
@@ -297,25 +306,34 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 20px;
+  margin-top: 25px;
 }
 
 .fluxo-lista li {
   background-color: var(--bg-dark);
   border: 1px solid var(--border-color);
-  padding: 20px;
+  padding: 25px 30px;
   border-radius: var(--radius);
   color: var(--text-base);
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.6;
   position: relative;
   transition: var(--transition);
+  text-align: justify;
 }
 
 .fluxo-lista li:hover {
   border-left: 4px solid var(--accent-purple);
-  padding-left: 17px;
+  padding-left: 26px;
+}
+
+.fluxo-lista li strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 8px;
+  font-size: 19px;
+  text-align: left;
 }
 
 .acoes-finais {
@@ -483,5 +501,30 @@ body {
   .coordenadas-display {
     flex-direction: column;
     gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .conteudo-info h2 {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+
+  .conteudo-info p {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .hero-banner p {
+    font-size: 16px;
+  }
+
+  .publico-card p {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .fluxo-lista li strong {
+    font-size: 17px;
   }
 }
