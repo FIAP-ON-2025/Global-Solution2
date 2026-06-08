@@ -31,33 +31,27 @@
               <label for="select-regiao">Selecione a Região sob Ameaça:</label>
               <select id="select-regiao" class="form-control">
                 <option value="">-- Escolha uma área crítica --</option>
-                <option value="Zona Sul - Encostas e Morros">
-                  Zona Sul - Encostas e Morros
-                </option>
-                <option value="Distrito Industrial - Área Costeira">
-                  Distrito Industrial - Área Costeira
-                </option>
-                <option value="Vale Central - Risco de Inundação">
-                  Vale Central - Risco de Inundação
-                </option>
+                <option value="zona-sul">Zona Sul - Encostas e Morros</option>
+                <option value="area-costeira">Distrito Industrial - Área Costeira</option>
+                <option value="vale-central">Vale Central - Risco de Inundação</option>
               </select>
             </div>
 
+            
             <div class="control-group">
-              <label for="select-protocolo"
-                >Protocolo de Resposta Recomendado pela IA:</label
-              >
-              <select id="select-protocolo" class="form-control">
-                <option value="Nível Amarelo: Alerta de Atenção (SMS)">
-                  Nível Amarelo: Alerta de Atenção (SMS)
-                </option>
-                <option value="Nível Laranja: Preparação e Isolamento">
-                  Nível Laranja: Preparação e Isolamento
-                </option>
-                <option value="Nível Vermelho: Evacuação Imediata e Sirenes">
-                  Nível Vermelho: Evacuação Imediata e Sirenes
-                </option>
-              </select>
+              <div class="label-container">
+                <label for="input-chuva">Volume de Chuva</label>
+                <span class="badge-clima"><span id="val-chuva">0</span> mm</span>
+              </div>
+              <input type="range" id="input-chuva" min="0" max="150" value="0" class="slider-clima">
+            </div>
+
+            <div class="control-group">
+              <div class="label-container">
+                <label for="input-vento">Velocidade do Vento</label>
+                <span class="badge-clima"><span id="val-vento">0</span> km/h</span>
+              </div>
+              <input type="range" id="input-vento" min="0" max="120" value="0" class="slider-clima">
             </div>
 
             <button type="button" id="btn-disparar" class="btn-alerta">
@@ -85,6 +79,6 @@
       </p>
     </footer>
 
-    <script src="script-simulador.js"></script>
+    <script src="./script-simulador.js"></script>
   </body>
 </html>
