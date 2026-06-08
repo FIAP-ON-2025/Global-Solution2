@@ -7,8 +7,10 @@
   --accent-blue: #00d2ff;
   --accent-purple: #9d4edd;
   --text-primary: #ffffff;
-  --text-secondary: #7e8c9f;
-  --text-base: #d1d9e6;
+  --text-base: #e2e8f0;
+  --border-color: #334155;
+  --radius: 8px;
+  --transition: all 0.3s ease;
 
   --status-success: #10b981;
   --status-success-text: #34d399;
@@ -36,13 +38,14 @@
 }
 
 body {
-  background-color: var(--bg-darker);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: #0b0f19;
   color: var(--text-base);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  line-height: 1.7;
-  font-size: 16px;
+  line-height: 1.6;
 }
 
 .conteudo-info {
@@ -340,21 +343,23 @@ body {
   text-align: center;
   margin-top: 60px;
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .acoes-finais h2 {
+  font-size: 30px;
   color: var(--text-primary);
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   text-align: center;
 }
 
 .acoes-finais p {
-  font-size: 16px;
-  color: var(--text-secondary);
+  font-size: 18px;
+  color: var(--text-primary);
+  max-width: 650px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
   text-align: center;
-  margin-bottom: 25px;
 }
 
 .hero-actions {
@@ -376,27 +381,16 @@ body {
   display: inline-block;
 }
 
-.hero-actions .btn-primary {
-  background-color: var(--accent-blue);
-  color: #000000;
-  border: 1px solid var(--accent-blue);
-}
-
-.hero-actions .btn-primary:hover {
-  background-color: transparent;
-  color: var(--accent-blue);
-  transform: translateY(-2px);
-}
-
+.hero-actions .btn-primary,
 .hero-actions .btn-secondary {
-  background-color: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
+  background: linear-gradient(135deg, #00f0ff 0%, #00a8ff 100%);
+  color: #000000;
+  border: none;
 }
 
+.hero-actions .btn-primary:hover,
 .hero-actions .btn-secondary:hover {
-  border-color: var(--accent-blue);
-  color: var(--accent-blue);
+  background: linear-gradient(135deg, #00a8ff 0%, #00f0ff 100%);
   transform: translateY(-2px);
 }
 
@@ -526,5 +520,35 @@ body {
 
   .fluxo-lista li strong {
     font-size: 17px;
+  }
+
+  .acoes-finais h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .acoes-finais p {
+    font-size: 15px;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero-actions a {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    font-size: 13px;
+    padding: 10px 20px;
   }
 }
