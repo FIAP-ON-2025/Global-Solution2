@@ -81,15 +81,29 @@ document.addEventListener('DOMContentLoaded', () => {
             textoStatus.textContent = statusTexto;
             riscoPorcentagem.textContent = subTexto;
 
-            setTimeout(() => {
-                const confirmarReset = confirm(`Deseja normalizar o status da região: ${regiaoInfo.nome}?`);
-                if (confirmarReset) {
-                    painelStatus.className = 'status-box status-seguro';
-                    textoStatus.textContent = "NENHUM PROTOCOLO ATIVO NA REGIÃO";
-                    riscoPorcentagem.textContent = "População em Segurança";
-                    injetarLog(`[OK] STATUS NORMALIZADO: ${regiaoInfo.nome} retornou às condições estáveis.`, '#56d364');
+            let btnNormalizar = document.getElementById('btn-normalizar');
+            if (!btnNormalizar) {
+                btnNormalizar = document.createElement('button');
+                btnNormalizar.id = 'btn-normalizar';
+                btnNormalizar.textContent = 'Normalizar Status';
+                
+                if (btnDisparar && btnDisparar.className) {
+                    btnNormalizar.className = btnDisparar.className;
                 }
-            }, 8000);
+                btnNormalizar.style.marginTop = '15px';
+                btnNormalizar.style.cursor = 'pointer';
+                
+                painelStatus.appendChild(btnNormalizar);
+            }
+            btnNormalizar.style.display = 'inline-block';
+
+            btnNormalizar.onclick = () => {
+                painelStatus.className = 'status-box status-seguro';
+                textoStatus.textContent = "NENHUM PROTOCOLO ATIVO NA REGIÃO";
+                riscoPorcentagem.textContent = "População em Segurança";
+                injetarLog(`[OK] STATUS NORMALIZADO: ${regiaoInfo.nome} retornou às condições estáveis.`, '#56d364');
+                btnNormalizar.style.display = 'none';
+            };
         });
     }
 
